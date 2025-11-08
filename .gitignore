@@ -1,0 +1,29 @@
+*.pyc
+*.pyo
+__pycache__/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment
+.env
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Data logs
+panel_readings.csv
+*.log
+
+# Backup files
+*.bak
+*.tmp
