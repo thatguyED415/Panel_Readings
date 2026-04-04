@@ -1,17 +1,20 @@
 import csv
 from datetime import datetime
 
-# voltage reference points
-NOMINAL_LN = 120.0
-NOMINAL_LL = 240.0
-LN_TOLERANCE = .02  # lower end of the threshold
-LL_TOLERANCE = .02
 
+# readings reference points
+NOMINAL_LN = 115.0
+NOMINAL_LL = 220.0
+LN_TOLERANCE = .05 # lower end of the threshold
+LL_TOLERANCE = .05
+
+voltages = "user_input"
+print(voltages)
 # lets begin with checks
 
 def in_range(value, nominal, tol):
     low = nominal * (1 - tol)
-    high = nominal * (1 - tol)
+    high = nominal * (1 + tol)
     return low <= value <= high, (low, high)
 
 # analyze the results
@@ -61,6 +64,8 @@ def log_reading(filename, panel_name, l1n, l2n, l1l2, issues):
             writer = csv.DictWriter(f, fieldnames=fieldnames)
             writer.writerow(row)
 
+
+# and we begin
 def main():
     print("Panel Voltage Logger (120/240V single-phase)")
     panel = input("Panel name / location: ").strip()
