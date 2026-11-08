@@ -1,7 +1,7 @@
 
 
 
-def input (voltage):
+def single_pole_breaker (voltage):
     if 110 <= voltage <= 123:
         return "All Good"
     elif voltage > 123:
@@ -10,15 +10,15 @@ def input (voltage):
         return "Fault"
     
 
-def dual_input (voltage):
-    if 210 <= voltage <= 240:
+def two_pole_breaker (voltage):
+    if 220 <= voltage <= 246:
         return "All Good"
     elif voltage > 240:
         return "Warning...High Voltage Detected"
     else:
         return "Fault"
 
-def amperage_input (amperage):
+def single_pole_amperage (amperage):
     if 10.2 <= amperage <= 13:
         return "System Clean, Check your shit though, this is HIGH"
     elif amperage > 13:
@@ -26,7 +26,7 @@ def amperage_input (amperage):
     else:
         return "Keeping it low and the savings wild" # have some fun with it here,comment out if boring
 
-def amperage_dualinput (dual_amperage):
+def two_pole_amerage (dual_amperage):
     if dual_amperage <= 18:
         return "System Clean, don't panic, it's running"
     elif dual_amperage > 18:

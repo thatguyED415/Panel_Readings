@@ -2,11 +2,11 @@ import csv
 from datetime import datetime
 
 
-# readings reference points
-NOMINAL_LN = 115.0
-NOMINAL_LL = 220.0
-LN_TOLERANCE = .05 # lower end of the threshold
-LL_TOLERANCE = .05
+# Reference values for a 120/240 V split-phase system.
+NOMINAL_LN = 120.0
+NOMINAL_LL = 240.0
+LN_TOLERANCE = .05 # +/- 5%: 114-126 V, inclusive
+LL_TOLERANCE = .05 # +/- 5%: 228-252 V, inclusive
 
 voltages = "user_input"
 print(voltages)
